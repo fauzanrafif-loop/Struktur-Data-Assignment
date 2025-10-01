@@ -40,6 +40,68 @@ int main () {
 ```
 Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlahan, pengurangan, perkalian, maupun pembagian. serta operator logika yang digunakan untuk menggabungkan atau membandingkan ekspresi logika.
 
+### 2. Percabangan
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main () {
+    int angka1 = 10;
+    int angka2 = 20;
+
+    if (angka1 > angka2) {
+        cout << "angka-1 lebih besar dari angka-2" << endl;
+    } else if (angka1 < angka2) {
+        cout << "angka-1 lebih kecil dari angka-2" << endl;
+    } else {
+        cout << "angka-1 sama dengan angka-2" << endl;
+    }
+
+    return 0;
+}
+```
+Kode di atas digunakan untuk membandingkan angka1 yang bernilai 10 dan angka2 yang bernilai 20. jika angka1 yang lebih besar dari angka2 maka outputnya akan menampilkan bahwa angka1 lebih besar dari angka2, begitu juga sebaliknya dan jika angka keduanya sama maka akan menghasilkan angka1 lebih kecil dari angka2.
+
+### 3. Struct
+
+```C++
+#include <iostream>
+using namespace std;
+
+struct Mahasiswa {
+    string nama;
+    int umur;
+};
+
+int main() {
+    int jumlah;
+    cout << "Masukan jumlah mahasiswa: ";
+    cin >> jumlah;
+    Mahasiswa mhs[jumlah];
+    
+    // input data menggunakan loop
+    for (int i = 0; i < jumlah; i++) {
+        cout << "\nMahasiswa ke-" << i + 1 << endl;
+        cout << "Nama: ";
+        cin >> mhs[i].nama;
+        cout << "Umur: ";
+        cin >> mhs[i].umur;
+    }
+
+    // tampilkan data
+    cout << "\n=== Data Mahasiswa ===\n";
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Mahasiswa ke-" << i + 1
+             << " | Nama: " << mhs[i].nama
+             << " | Umur: " << mhs[i].umur << endl;
+    }
+
+    return 0;
+}
+```
+kode diatas merupakan sebuah struct bernama Mahasiswa yang memiliki dua atribut, yaitu nama bertipe string dan umur bertipe integer yang digunakan untuk mencatat dan menampilkan data mahasiswa berdasarkan input pengguna.
+
 ## Unguided 
 
 ### 1. Buatkan program yang menerima input-an dua buah bilangan bertipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
