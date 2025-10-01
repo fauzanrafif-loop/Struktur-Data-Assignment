@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 1 Tentang Pengenalan Bahasa C++ (1)</h1>
+# <h1 align="center">Laporan Praktikum Modul 1 Tentang Pengenalan Bahasa C++ </h1>
 <p align="center">Fauzan Rafif - 103112400227</p>
 
 ## Dasar Teori
