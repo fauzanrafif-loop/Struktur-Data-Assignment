@@ -133,37 +133,17 @@ Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlah
 
 ```C++
 #include <iostream>
-
 using namespace std;
 
-int main(){
-    string satuan[9] = {"satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan",};
-    string belasan[9] = {"sebelas", "dua belas", "tiga belas", "empat belas", "lima belas", "enam belas", "tujuh belas", "delapan belas", "sembilan belas"};
-    string puluhan[9] = {"sepuluh", "dua puluh", "tiga puluh", "empat puluh", "lima puluh", "enam puluh", "tujuh puluh", "delapan puluh", "sembilan puluh"};
-
-    int angka;
-    cout << "Masukkan Angka: ";
-    cin >> angka;
-
-    if (angka < 10) {
-        cout << satuan[angka - 1] << endl;
-    } else if (angka < 20) {
-        cout << belasan[angka - 11] << endl;
-    } else if (angka %10 == 0) {
-        cout << puluhan[angka / 10 - 1] << endl;
-    } else if (angka == 100) {
-        cout << "seratus" << endl;
-    } else if (angka > 20 && angka < 100) {
-        cout << puluhan[ (angka/10)-1 ] << " " << satuan[ (angka%10)-1 ] << endl;
-    }
-
+int main() {
+    cout << "ini adalah file code unguided praktikan" << endl;
     return 0;
-} 
+}
 ```
 #### Output:
-<img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/56ec92a0-9027-4047-9159-681a794df267" />
+![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk mengubah angka menjadi bentuk tulisan.
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 ### 3. Buatlah program yang dapat menerima input dan output sebagai berikut:
 <img width="269" height="261" alt="Image" src="https://github.com/user-attachments/assets/86cd0bc5-9848-4d7d-beb0-962e352e700c" />
@@ -201,7 +181,7 @@ int main() {
 ```
 #### Output:
 <img width="1682" height="167" alt="Image" src="https://github.com/user-attachments/assets/63747614-8ee9-4130-ac96-40f6b3e9912f" />
-Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan seperti segitiga terbalik.
+Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan 
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
