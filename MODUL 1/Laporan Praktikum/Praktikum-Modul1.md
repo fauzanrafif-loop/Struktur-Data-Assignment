@@ -161,7 +161,7 @@ int main() {
 #### Output:
 <img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/46146db9-ae96-4968-837d-f540f9e8125a" />
 
-Kode di atas digunakan untuk mengubah angka menjadi tulisan.
+Kode di atas digunakan untuk mengubah angka menjadi tulisan dengan penggunaan percabangan.
 
 ### 3. Buatlah program yang dapat menerima input dan output sebagai berikut:
 <img width="269" height="261" alt="Image" src="https://github.com/user-attachments/assets/86cd0bc5-9848-4d7d-beb0-962e352e700c" />
