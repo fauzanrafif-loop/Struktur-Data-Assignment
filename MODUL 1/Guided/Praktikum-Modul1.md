@@ -7,36 +7,65 @@ Bahasa pemrogramanan merupakan instruksi standar untuk memerintahkan sebuah komp
 
 ## Guided 
 
-### 1. Aritmatika
+### 1. Operator Aritmatika dan Operator Logika
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+int main () {
+    int a;
+    int b;
+    
+    cout << "Masukan angka1: ";
+    cin >> a;
+    cout << "Masukan angka2: ";
+    cin >> b;
+
+    //operator aritmatika
+    cout << "a + b = " << (a+b) << endl;
+    cout << "a - b = " << (a-b) << endl;
+    cout << "a * b = " << (a*b) << endl;
+    cout << "a % b = " << (a%b) << endl;
+
+    //Operator logika
+    cout << "a > b = " << (a>b) << endl;
+    cout << "a < b = " << (a<b) << endl;
+    cout << "a >= b = " << (a>=b) << endl;
+    cout << "a <= b = " << (a<=b) << endl;
+    cout << "a == b = " << (a==b) << endl;
+    cout << "a != b = " << (a!=b) << endl;
     return 0;
 }
 ```
-Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlahan, pengurangan, perkalian, maupun pembagian.
+Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlahan, pengurangan, perkalian, maupun pembagian. serta operator logika yang digunakan untuk menggabungkan atau membandingkan ekspresi logika.
 
 ## Unguided 
 
-### 1. []
+### 1. Buatkan program yang menerima input-an dua buah bilangan bertipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 ```C++
 #include <iostream>
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    float a, b;
+    cout << "Masukkan Angka : ";
+    cin >> a;
+    cout << "Masukkan Angka Selanjutnya: ";
+    cin >> b;
+
+    cout << "Hasil Penjumlahan : " << a + b << endl;
+    cout << "Hasil Pengurangan : " << a - b << endl;
+    cout << "Hasil Perkalian : " << a * b << endl;
+    cout << "Hasil Pembagian : " << a / b << endl;
     return 0;
 }
 ```
 #### Output:
 ![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlahan, pengurangan, perkalian, maupun pembagian.
 
 ### 2. [Soal]
 
