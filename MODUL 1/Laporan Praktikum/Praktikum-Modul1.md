@@ -129,7 +129,7 @@ int main() {
 
 Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlahan, pengurangan, perkalian, maupun pembagian.
 
-### 2. [Soal]
+### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100.  
 
 ```C++
 #include <iostream>
@@ -145,7 +145,8 @@ int main() {
 
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
-### 3. [Soal]
+### 3. Buatlah program yang dapat menerima input dan output sebagai berikut:
+<img width="269" height="261" alt="Image" src="https://github.com/user-attachments/assets/86cd0bc5-9848-4d7d-beb0-962e352e700c" />
 
 ```C++
 #include <iostream>
