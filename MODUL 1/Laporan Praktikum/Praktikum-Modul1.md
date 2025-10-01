@@ -42,8 +42,6 @@ Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlah
 
 ## Unguided 
 
-## Soal
-
 ### 1. Buatkan program yang menerima input-an dua buah bilangan bertipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 ```C++
