@@ -63,7 +63,7 @@ int main() {
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
+<img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
 
 Kode di atas digunakan untuk melakukan perhitungan bilangan mulai dari penjumlahan, pengurangan, perkalian, maupun pembagian.
 
