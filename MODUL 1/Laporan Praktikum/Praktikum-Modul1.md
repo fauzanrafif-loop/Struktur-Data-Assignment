@@ -202,10 +202,9 @@ int main() {
 Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan seperti segitiga terbalik.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
-
+<img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc49786a-daaa-4f1e-90f5-bebb2f1fd9b2" />
 
 ## Kesimpulan
 Modul ini memberikan pengenalan bahasa pemrograman C++ yang lumayan lengkap, dari struktur dasar program C++ yang meliputi deklarasi library, fungsi, dan program utama seperti variabel dan konstanta. Untuk input atau output terdapat penggunaan cout, cin, dan getchar dengan penjelasan format output yang tepat dalam membantu saya memahami logika pemrograman. Selain itu dengan adanya latihan soal yang terdapat modul juga sangat membantu saya melatih logika pemrograman dan penyelesaian masalahnya.
 ## Referensi
-[1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
+[1] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1). Penerbit ANDI.
