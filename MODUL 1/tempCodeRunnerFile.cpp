@@ -1,16 +1,29 @@
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    float a, b;
-    cout << "Masukkan Angka : ";
-    cin >> a;
-    cout << "Masukkan Angka Selanjutnya: ";
-    cin >> b;
+    int n;
+    cout << "Masukkan angka: ";
+    cin >> n;
 
-    cout << "Hasil Penjumlahan : " << a + b << endl;
-    cout << "Hasil Pengurangan : " << a - b << endl;
-    cout << "Hasil Perkalian : " << a * b << endl;
-    cout << "Hasil Pembagian : " << a / b << endl;
+    for (int baris = 0; baris <= n; baris++) {
+        for (int i = 0; i < baris * 2; i++) {
+            cout << " ";
+        }
+        
+        for (int i = n - baris; i > 0; i--) {
+            cout << i << " ";
+        }
+        
+        cout << "* ";
+        
+        for (int i = 1; i <= n - baris; i++) {
+            cout << i << " ";
+        }
+        
+        cout << endl;
+    }
+    
     return 0;
 }

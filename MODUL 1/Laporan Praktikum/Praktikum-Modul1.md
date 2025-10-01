@@ -150,17 +150,38 @@ Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktika
 
 ```C++
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+    int n;
+    cout << "Masukkan angka: ";
+    cin >> n;
+
+    for (int baris = 0; baris <= n; baris++) {
+        for (int i = 0; i < baris * 2; i++) {
+            cout << " ";
+        }
+        
+        for (int i = n - baris; i > 0; i--) {
+            cout << i << " ";
+        }
+        
+        cout << "* ";
+        
+        for (int i = 1; i <= n - baris; i++) {
+            cout << i << " ";
+        }
+        
+        cout << endl;
+    }
+    
     return 0;
 }
 ```
 #### Output:
-![240302_00h00m06s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/6d1727a8-fb77-4ecf-81ff-5de9386686b7)
-
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+<img width="1682" height="167" alt="Image" src="https://github.com/user-attachments/assets/63747614-8ee9-4130-ac96-40f6b3e9912f" />
+Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan 
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
