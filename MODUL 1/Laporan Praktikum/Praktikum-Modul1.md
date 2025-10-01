@@ -206,7 +206,6 @@ Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan an
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
-
+Modul ini memberikan pengenalan bahasa pemrograman C++ yang lumayan lengkap, dari struktur dasar program C++ yang meliputi deklarasi library, fungsi, dan program utama seperti variabel dan konstanta. Untuk input atau output terdapat penggunaan cout, cin, dan getchar dengan penjelasan format output yang tepat dalam membantu saya memahami logika pemrograman. Selain itu dengan adanya latihan soal yang terdapat modul juga sangat membantu saya melatih logika pemrograman dan penyelesaian masalahnya.
 ## Referensi
 [1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
