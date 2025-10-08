@@ -153,7 +153,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
+<img width="1400" height="358" alt="Image" src="https://github.com/user-attachments/assets/cddc98cd-2050-482f-b129-480c64950e1b" />
 
 Kode di atas digunakan untuk melakukan operasi dasar pada dua matriks berukuran 3x3, yaitu penjumlahan, pengurangan, dan perkalian.Kita diminta untuk memasukkan nilai-nilai dari dua matriks, yaitu matriks A dan matriks B. Setelah kedua matriks dimasukkan, kita memilih jenis operasi yang ingin dilakukan seperti penjumlahan dengan menggunakan simbol +, pengurangan dengan simbol - dan perkalian dengan simbol *.
 
