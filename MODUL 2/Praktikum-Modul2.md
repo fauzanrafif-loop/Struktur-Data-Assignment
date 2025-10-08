@@ -272,7 +272,7 @@ Kode di atas digunakan untuk mengolah data dalam sebuah array satu dimensi denga
 <img width="2560" height="1600" alt="Image" src="https://github.com/user-attachments/assets/01560097-d8d5-4937-958d-6a3cc1c87fbe" />
 
 ## Kesimpulan
-Modul ini merupakan lanjutan yang berfokus pada ide array, pointer, fungsi, dan prosedur. Pengetahuan yang mendalam mengenai array membuat pengaturan data menjadi lebih sistematis, sedangkan penguasaan pointer memberikan peluang untuk pengolahan memori yang lebih efektif. Fungsi dan prosedur tuh bikin kita lebih gampang daripada harus nulis kode yang sama berulang-ulang, mending dibikin sekali trus dipanggil berkali-kali.
+Modul ini merupakan lanjutan yang berfokus pada array, pointer, fungsi, dan prosedur. Pengetahuan yang mendalam mengenai array membuat pengaturan data menjadi lebih sistematis, sedangkan penguasaan pointer memberikan peluang untuk pengolahan memori yang lebih efektif. Fungsi dan prosedur tuh bikin kita lebih gampang daripada harus nulis kode yang sama berulang-ulang, mending dibikin sekali trus dipanggil berkali-kali.
 
 ## Referensi
 [1] Putra, M. T. D., Munawir, M., & Yuniarti, A. R. (2023). BELAJAR PEMROGRAMAN LANJUT DENGAN C++.
