@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-Bahasa pemrogramanan merupakan instruksi standar untuk memerintahkan sebuah komputer. Bahasa pemrograman dapat dimanfaatkan untuk membagun sebuah sistem aplikasi sesuai dengan kebutuhan yang dapat dimanfaatkan dalam berbagai bidang. Salah satu di antaranya adalah bahasa pemrograman C++ di mana bahasa pemrograman C++ ini merupakan hybrid dari bahasa C. 
+Modul ini membahas array, pointer, fungsi, dan prosedur. Array didefinisikan sebagai kumpulan data dengan tipe yang sama yang disimpan dalam lokasi memori berurutan, dengan kemampuan akses melalui indeks.Kalau pointer sangat terkait dengan array karena nama array sendiri merupakan pointer ke elemen pertama array tersebut. Sedangkan fungsi dan prosedur merupakan kode yang dirancang untuk melakukan tugas spesifik, dengan perbedaan utama bahwa fungsi mengembalikan nilai sedangkan prosedur tidak.
 
 ## Guided 
 
@@ -54,7 +54,7 @@ int main(){
     return 0;
 }
 ```
-.....
+Kode diatas digunakan untuk menampilkan isi array satu dimensi, dua dimensi, dan tiga dimensi.
 
 ### 2. Prosedur
 
@@ -77,7 +77,7 @@ int main(){
     return 0;
 }
 ```
-..........
+Kode diatas digunakan untuk menampilkan sejumlah baris teks sesuai dengan angka yang kita masukkan.
 
 ### 3. Pointer
 ```C++
@@ -109,7 +109,7 @@ int main (){
     return 0;
 }
 ```
-..........
+Kode diatas digunakan untuk menunjukkan cara kerja pointer dan fungsi pertukaran nilai menggunakan pointer.
 
 ## Unguided 
 
@@ -117,26 +117,45 @@ int main (){
 
 ```C++
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    float a, b;
-    cout << "Masukkan Angka : ";
-    cin >> a;
-    cout << "Masukkan Angka Selanjutnya: ";
-    cin >> b;
+    int A[3][3], B[3][3], C[3][3];
+    char op;
 
-    cout << "Hasil Penjumlahan : " << a + b << endl;
-    cout << "Hasil Pengurangan : " << a - b << endl;
-    cout << "Hasil Perkalian : " << a * b << endl;
-    cout << "Hasil Pembagian : " << a / b << endl;
-    return 0;
+    cout << "Masukkan matriks A :\n";
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            cin >> A[i][j];
+
+    cout << "Masukkan matriks B :\n";
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            cin >> B[i][j];
+
+    cout << "Pilih operasi hitung: ";
+    cin >> op;
+
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            if(op == '+') C[i][j] = A[i][j] + B[i][j];
+            else if(op == '-') C[i][j] = A[i][j] - B[i][j];
+            else if(op == '*'){
+                C[i][j] = 0;
+                for(int k=0;k<3;k++)
+                    C[i][j] += A[i][k] * B[k][j];
+            }
+            cout << C[i][j] << ' ';
+        }
+        cout << endl;
+    }
 }
 ```
 #### Output:
 <img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
 
-Kode di atas digunakan untuk mengubah angka menjadi tulisan.
+Kode di atas digunakan untuk melakukan operasi dasar pada dua matriks berukuran 3x3, yaitu penjumlahan, pengurangan, dan perkalian.Kita diminta untuk memasukkan nilai-nilai dari dua matriks, yaitu matriks A dan matriks B. Setelah kedua matriks dimasukkan, kita memilih jenis operasi yang ingin dilakukan seperti penjumlahan dengan menggunakan simbol +, pengurangan dengan simbol - dan perkalian dengan simbol *.
 
 ### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel.
 
@@ -145,32 +164,40 @@ Kode di atas digunakan untuk mengubah angka menjadi tulisan.
 
 using namespace std;
 
+void Pointer(int *a, int *b, int *c) {
+    int temp = *a;
+    *a = *b;
+    *b = *c;
+    *c = temp;
+}
+
+void Reference(int &a, int &b, int &c) {
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
+}
+
 int main() {
-    string dasar[] = {"nol", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
-    int angka;
-    cout << "Masukkan angka: ";
-    cin >> angka;
-    
-    if (angka == 0) cout << dasar[0];
-    else if (angka == 10) cout << "sepuluh";
-    else if (angka == 11) cout << "sebelas"; 
-    else if (angka < 10) cout << dasar[angka];
-    else if (angka < 20) cout << dasar[angka-10] << " belas";
-    else if (angka == 100) cout << "seratus";
-    else if (angka < 100) {
-        cout << dasar[angka/10] << " puluh";
-        if (angka % 10 > 0) cout << " " << dasar[angka % 10];
-    }
-    else cout << "Tidak ada";
-    
-    cout << endl;
+    int x, y, z;
+
+    cout << "Masukkan nilai: ";
+    cin >> x >> y >> z;
+    cout << "Nilai awal: " << x << " " << y << " " << z << endl;
+
+    Pointer(&x, &y, &z);
+    cout << "Pointer : " << x << " " << y << " " << z << endl;
+
+    Reference(x, y, z);
+    cout << "Reference : " << x << " " << y << " " << z << endl;
+
     return 0;
 }
 ```
 #### Output:
 <img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/46146db9-ae96-4968-837d-f540f9e8125a" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menukar nilai dari tiga variabel dengan menggunakan dua cara berbeda, yaitu pointer dan reference.
 
 ### 3. Diketahui sebuah array 1 dimensi sebagai berikut : 
 ### arrA = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55} Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Gunakan function cariMinimum() untuk mencari nilai minimum dan function cariMaksimum() untuk mencari nilai maksimum, serta gunakan prosedur hitungRataRata() untuk menghitung nilai rata – rata! Buat program menggunakan menu switch-case seperti berikut ini : 
@@ -179,47 +206,74 @@ Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktika
 2. cari nilai maksimum 
 3. cari nilai minimum 
 4. Hitung nilai rata - rata
+
 ```C++
 #include <iostream>
 
 using namespace std;
 
-int main() {
-    int n;
-    cout << "Masukkan angka: ";
-    cin >> n;
+int cariMinimum(int arr[], int n) {
+    int min = arr[0];
+    for(int i=1; i<n; i++)
+        if(arr[i] < min) min = arr[i];
+    return min;
+}
 
-    for (int baris = 0; baris <= n; baris++) {
-        for (int i = 0; i < baris * 2; i++) {
-            cout << " ";
-        }
-        
-        for (int i = n - baris; i > 0; i--) {
-            cout << i << " ";
-        }
-        
-        cout << "* ";
-        
-        for (int i = 1; i <= n - baris; i++) {
-            cout << i << " ";
-        }
-        
-        cout << endl;
+int cariMaksimum(int arr[], int n) {
+    int max = arr[0];
+    for(int i=1; i<n; i++)
+        if(arr[i] > max) max = arr[i];
+    return max;
+}
+
+void hitungRataRata(int arr[], int n) {
+    float total = 0;
+    for(int i=0; i<n; i++)
+        total += arr[i];
+    cout << "Nilai rata-rata: " << total / n << endl;
+}
+
+int main() {
+    int arrA[10] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
+    int n = 10, menu;
+
+    cout << "--- Menu Program Array ---\n";
+    cout << "1. Tampilkan isi array\n";
+    cout << "2. Cari nilai maksimum\n";
+    cout << "3. Cari nilai minimum\n";
+    cout << "4. Hitung nilai rata-rata\n";
+    cout << "Pilih salah satu menu diatas: ";
+    cin >> menu;
+
+    switch(menu) {
+        case 1:
+            cout << "Masukkan isi array: ";
+            for(int i=0; i<n; i++) cout << arrA[i] << " ";
+            cout << endl;
+            break;
+        case 2:
+            cout << "Nilai maksimum: " << cariMaksimum(arrA, n) << endl;
+            break;
+        case 3:
+            cout << "Nilai minimum: " << cariMinimum(arrA, n) << endl;
+            break;
+        case 4:
+            hitungRataRata(arrA, n);
+            break;
     }
-    
-    return 0;
 }
 ```
 #### Output:
 <img width="1682" height="167" alt="Image" src="https://github.com/user-attachments/assets/63747614-8ee9-4130-ac96-40f6b3e9912f" />
-Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan seperti segitiga terbalik.
+
+Kode di atas digunakan untuk mengolah data dalam sebuah array satu dimensi dengan menampilkan nilai maksimum, minimum, dan nilai rata-rata, serta isi dari array itu sendiri.
 
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Modul ini merupakan lanjutan yang berfokus pada ide array, pointer, fungsi, dan prosedur. Pengetahuan yang mendalam mengenai array membuat pengaturan data menjadi lebih sistematis, sedangkan penguasaan pointer memberikan peluang untuk pengolahan memori yang lebih efektif. Fungsi dan prosedur tuh bikin kita lebih gampang daripada harus nulis kode yang sama berulang-ulang, mending dibikin sekali trus dipanggil berkali-kali.
 
 ## Referensi
-[1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
+[1] Putra, M. T. D., Munawir, M., & Yuniarti, A. R. (2023). BELAJAR PEMROGRAMAN LANJUT DENGAN C++.
