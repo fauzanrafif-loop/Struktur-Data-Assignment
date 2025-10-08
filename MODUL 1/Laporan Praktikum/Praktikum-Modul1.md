@@ -127,7 +127,7 @@ int main() {
 #### Output:
 <img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
 
-Kode di atas digunakan untuk mengubah angka menjadi tulisan.
+Kode di atas digunakan untuk melakukan perhitungan seperti penjumlahan, pengurangan, perkalian, dan pembagian.
 
 ### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100.  
 
@@ -161,7 +161,7 @@ int main() {
 #### Output:
 <img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/46146db9-ae96-4968-837d-f540f9e8125a" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk mengubah angka menjadi tulisan dengan penggunaan percabangan.
 
 ### 3. Buatlah program yang dapat menerima input dan output sebagai berikut:
 <img width="269" height="261" alt="Image" src="https://github.com/user-attachments/assets/86cd0bc5-9848-4d7d-beb0-962e352e700c" />
@@ -202,11 +202,9 @@ int main() {
 Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan seperti segitiga terbalik.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
-
+<img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc49786a-daaa-4f1e-90f5-bebb2f1fd9b2" />
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
-
+Modul ini memberikan pengenalan bahasa pemrograman C++ yang lumayan lengkap, dari struktur dasar program C++ yang meliputi deklarasi library, fungsi, dan program utama seperti variabel dan konstanta. Untuk input atau output terdapat penggunaan cout, cin, dan getchar dengan penjelasan format output yang tepat dalam membantu saya memahami logika pemrograman. Selain itu dengan adanya latihan soal yang terdapat modul juga sangat membantu saya melatih logika pemrograman dan penyelesaian masalahnya.
 ## Referensi
-[1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
+[1] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1). Penerbit ANDI.
