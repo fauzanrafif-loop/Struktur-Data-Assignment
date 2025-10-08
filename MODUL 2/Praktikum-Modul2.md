@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-Modul ini membahas array, pointer, fungsi, dan prosedur. Array didefinisikan sebagai kumpulan data dengan tipe yang sama yang disimpan dalam lokasi memori berurutan, dengan kemampuan akses melalui indeks.Kalau pointer sangat terkait dengan array karena nama array sendiri merupakan pointer ke elemen pertama array tersebut. Sedangkan fungsi dan prosedur merupakan kode yang dirancang untuk melakukan tugas spesifik, dengan perbedaan utama bahwa fungsi mengembalikan nilai sedangkan prosedur tidak.
+Modul ini membahas array, pointer, fungsi, dan prosedur. Array didefinisikan sebagai kumpulan data dengan tipe yang sama yang disimpan dalam lokasi memori berurutan, dengan kemampuan akses melalui indeks. Kalau pointer sangat terkait dengan array karena nama array sendiri merupakan pointer ke elemen pertama array tersebut. Sedangkan fungsi dan prosedur merupakan kode yang dirancang untuk melakukan tugas spesifik, dengan perbedaan utama bahwa fungsi mengembalikan nilai sedangkan prosedur tidak.
 
 ## Guided 
 
