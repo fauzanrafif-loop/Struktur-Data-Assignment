@@ -104,7 +104,7 @@ int main() {
 
 ## Unguided 
 
-### 1. Buatkan program yang menerima input-an dua buah bilangan bertipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
+### 1. Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI dengan rumus 0.3*uts+0.4*uas+0.3*tugas. 
 
 ```C++
 #include <iostream>
@@ -129,7 +129,9 @@ int main() {
 
 ................
 
-### 2. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100.  
+### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:
+
+<img width="1470" height="943" alt="Image" src="https://github.com/user-attachments/assets/d0f2c7aa-22f4-4672-8322-9e3ee953af68" />
 
 ```C++
 #include <iostream>
@@ -163,8 +165,11 @@ int main() {
 
 ..............
 
-### 3. Buatlah program yang dapat menerima input dan output sebagai berikut:
-<img width="269" height="261" alt="Image" src="https://github.com/user-attachments/assets/86cd0bc5-9848-4d7d-beb0-962e352e700c" />
+### 3. Buatlah program dengan ketentuan : 
+- 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer 
+- fungsi/prosedur yang menampilkan isi sebuah array integer 2D 
+- fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu 
+- fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah pointer
 
 ```C++
 #include <iostream>
