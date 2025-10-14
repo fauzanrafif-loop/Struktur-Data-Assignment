@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-Modul ini membahas array, pointer, fungsi, dan prosedur. Array didefinisikan sebagai kumpulan data dengan tipe yang sama yang disimpan dalam lokasi memori berurutan, dengan kemampuan akses melalui indeks.Kalau pointer sangat terkait dengan array karena nama array sendiri merupakan pointer ke elemen pertama array tersebut. Sedangkan fungsi dan prosedur merupakan kode yang dirancang untuk melakukan tugas spesifik, dengan perbedaan utama bahwa fungsi mengembalikan nilai sedangkan prosedur tidak.
+Modul ini membahas array, pointer, fungsi, dan prosedur. Array didefinisikan sebagai kumpulan data dengan tipe yang sama yang disimpan dalam lokasi memori berurutan, dengan kemampuan akses melalui indeks. Kalau pointer sangat terkait dengan array karena nama array sendiri merupakan pointer ke elemen pertama array tersebut. Sedangkan fungsi dan prosedur merupakan kode yang dirancang untuk melakukan tugas spesifik, dengan perbedaan utama bahwa fungsi mengembalikan nilai sedangkan prosedur tidak.
 
 ## Guided 
 
@@ -153,7 +153,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
+<img width="1746" height="915" alt="Image" src="https://github.com/user-attachments/assets/a0999adf-3763-406a-bd07-144617aa2ec9" />
 
 Kode di atas digunakan untuk melakukan operasi dasar pada dua matriks berukuran 3x3, yaitu penjumlahan, pengurangan, dan perkalian.Kita diminta untuk memasukkan nilai-nilai dari dua matriks, yaitu matriks A dan matriks B. Setelah kedua matriks dimasukkan, kita memilih jenis operasi yang ingin dilakukan seperti penjumlahan dengan menggunakan simbol +, pengurangan dengan simbol - dan perkalian dengan simbol *.
 
@@ -195,7 +195,7 @@ int main() {
 }
 ```
 #### Output:
-<img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/46146db9-ae96-4968-837d-f540f9e8125a" />
+<img width="1357" height="142" alt="Image" src="https://github.com/user-attachments/assets/fcf73886-8e6e-4946-a46f-87c6f2d9ad3d" />
 
 Kode di atas digunakan untuk menukar nilai dari tiga variabel dengan menggunakan dua cara berbeda, yaitu pointer dan reference.
 
@@ -264,16 +264,15 @@ int main() {
 }
 ```
 #### Output:
-<img width="1682" height="167" alt="Image" src="https://github.com/user-attachments/assets/63747614-8ee9-4130-ac96-40f6b3e9912f" />
+<img width="1665" height="898" alt="Image" src="https://github.com/user-attachments/assets/13943e91-707a-4782-9fef-5e4f7db60b5d" />
 
 Kode di atas digunakan untuk mengolah data dalam sebuah array satu dimensi dengan menampilkan nilai maksimum, minimum, dan nilai rata-rata, serta isi dari array itu sendiri.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
-
+<img width="2560" height="1600" alt="Image" src="https://github.com/user-attachments/assets/01560097-d8d5-4937-958d-6a3cc1c87fbe" />
 
 ## Kesimpulan
-Modul ini merupakan lanjutan yang berfokus pada ide array, pointer, fungsi, dan prosedur. Pengetahuan yang mendalam mengenai array membuat pengaturan data menjadi lebih sistematis, sedangkan penguasaan pointer memberikan peluang untuk pengolahan memori yang lebih efektif. Fungsi dan prosedur tuh bikin kita lebih gampang daripada harus nulis kode yang sama berulang-ulang, mending dibikin sekali trus dipanggil berkali-kali.
+Modul ini merupakan lanjutan yang berfokus pada array, pointer, fungsi, dan prosedur. Pengetahuan yang mendalam mengenai array membuat pengaturan data menjadi lebih sistematis, sedangkan penguasaan pointer memberikan peluang untuk pengolahan memori yang lebih efektif. Fungsi dan prosedur tuh bikin kita lebih gampang daripada harus nulis kode yang sama berulang-ulang, mending dibikin sekali trus dipanggil berkali-kali.
 
 ## Referensi
 [1] Putra, M. T. D., Munawir, M., & Yuniarti, A. R. (2023). BELAJAR PEMROGRAMAN LANJUT DENGAN C++.
