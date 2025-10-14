@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-...............
+Abstract Data Type (ADT) atau Tipe Data Abstrak adalah konsep dasar dalam pemrograman yang bertujuan untuk memisahkan antara definisi struktur data dan operasi yang boleh dilakukan tanpa perlu menunjukkan detail implementasi internal. Dalam bahasa C++, penerapan ADT umumnya dilakukan dengan memisahkan antara deklarasi tipe dan fungsinya dalam file header (.h) serta implementasinya dalam file (.cpp). Pemisahan ini bertujuan agar program lebih terstruktur, dan meminimalisir kesalahan saat terjadi perubahan pada satu bagian program.
 
 ## Guided 
 
@@ -108,26 +108,58 @@ int main() {
 
 ```C++
 #include <iostream>
+
 using namespace std;
 
-int main() {
-    float a, b;
-    cout << "Masukkan Angka : ";
-    cin >> a;
-    cout << "Masukkan Angka Selanjutnya: ";
-    cin >> b;
+struct Mahasiswa {
+    string nama;
+    string nim;
+    float uts, uas, tugas, akhir;
+};
 
-    cout << "Hasil Penjumlahan : " << a + b << endl;
-    cout << "Hasil Pengurangan : " << a - b << endl;
-    cout << "Hasil Perkalian : " << a * b << endl;
-    cout << "Hasil Pembagian : " << a / b << endl;
+float nilaiAkhir(float uts, float uas, float tugas) {
+    return 0.3 * uts + 0.4 * uas + 0.3 * tugas;
+}
+
+int main() {
+    Mahasiswa mhs[10];
+    int n;
+
+    cout << "Jumlah mahasiswa : ";
+    cin >> n;
+    if (n > 10) n = 10;
+
+    for (int i = 0; i < n; i++) {
+        cout << "\nMahasiswa ke-" << i + 1 << endl;
+        cout << "Nama : ";
+        cin >> mhs[i].nama;
+        cout << "NIM : ";
+        cin >> mhs[i].nim;
+        cout << "UTS : ";
+        cin >> mhs[i].uts;
+        cout << "UAS : ";
+        cin >> mhs[i].uas;
+        cout << "Tugas : ";
+        cin >> mhs[i].tugas;
+
+        mhs[i].akhir = nilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
+    }
+
+    cout << "\nHASIL NILAI AKHIR\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Nama : " << mhs[i].nama << endl;
+        cout << "NIM : " << mhs[i].nim << endl;
+        cout << "Akhir : "<< mhs[i].akhir << endl;
+    }
+
     return 0;
 }
+
 ```
 #### Output:
-<img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
+<img width="925" height="652" alt="Image" src="https://github.com/user-attachments/assets/a2550f5d-e60e-4550-bab7-30853250e249" />
 
-................
+Kode diatas digunakan untuk memasukkan data beberapa mahasiswa, lalu menghitung nilai akhirnya. Saat program dijalankan, kita mangisikan berapa jumlah mahasiswa yang ingin dimasukkan. Setelah itu, kita mengisi nama, NIM, nilai UTS, nilai UAS, dan nilai tugas untuk setiap mahasiswa.
 
 ### 2. Buatlah ADT pelajaran sebagai berikut di dalam file “pelajaran.h”:
 
