@@ -2,46 +2,46 @@
 
 using namespace std;
 
-struct Mahasiswa {
-    string nama;
-    string nim;
-    float uts, uas, tugas, akhir;
-};
+void tampil(int arr[3][3]) {
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
 
-float nilaiAkhir(float uts, float uas, float tugas) {
-    return 0.3 * uts + 0.4 * uas + 0.3 * tugas;
+void tukarArray(int a[3][3], int b[3][3], int i, int j) {
+    int temp = a[i][j];
+    a[i][j] = b[i][j];
+    b[i][j] = temp;
+}
+
+void tukarPointer(int *p, int *q) {
+    int temp = *p;
+    *p = *q;
+    *q = temp;
 }
 
 int main() {
-    Mahasiswa mhs[10];
-    int n;
+    int A[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    int B[3][3] = {{9,8,7},{6,5,4},{3,2,1}};
 
-    cout << "Jumlah mahasiswa : ";
-    cin >> n;
-    if (n > 10) n = 10;
+    int x = 10, y = 20;
+    int *px = &x, *py = &y;
 
-    for (int i = 0; i < n; i++) {
-        cout << "\nMahasiswa ke-" << i + 1 << endl;
-        cout << "Nama : ";
-        cin >> mhs[i].nama;
-        cout << "NIM : ";
-        cin >> mhs[i].nim;
-        cout << "UTS : ";
-        cin >> mhs[i].uts;
-        cout << "UAS : ";
-        cin >> mhs[i].uas;
-        cout << "Tugas : ";
-        cin >> mhs[i].tugas;
+    cout << "Array A:\n"; tampil(A);
+    cout << "\nArray B:\n"; tampil(B);
 
-        mhs[i].akhir = nilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
-    }
+    tukarArray(A, B, 0, 0);
 
-    cout << "\nHASIL NILAI AKHIR\n";
-    for (int i = 0; i < n; i++) {
-        cout << "Nama : " << mhs[i].nama << endl;
-        cout << "NIM : " << mhs[i].nim << endl;
-        cout << "Akhir : "<< mhs[i].akhir << endl;
-    }
+    cout << "\nSetelah ditukar:\n";
+    cout << "Array A:\n"; tampil(A);
+    cout << "\nArray B:\n"; tampil(B);
+
+    cout << "\nSebelum tukar pointer: x=" << x << ", y=" << y << endl;
+    tukarPointer(px, py);
+    cout << "Setelah tukar pointer: x=" << x << ", y=" << y << endl;
 
     return 0;
 }

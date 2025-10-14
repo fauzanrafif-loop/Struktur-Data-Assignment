@@ -7,100 +7,62 @@ Abstract Data Type (ADT) atau Tipe Data Abstrak adalah konsep dasar dalam pemrog
 
 ## Guided 
 
-### 1. Operator Aritmatika dan Operator Logika
+### 1. Fungsi Deklarasi
 
 ```C++
-#include <iostream>
-using namespace std;
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
 
-int main () {
-    int a;
-    int b;
-    
-    cout << "Masukan angka1: ";
-    cin >> a;
-    cout << "Masukan angka2: ";
-    cin >> b;
-
-    //operator aritmatika
-    cout << "a + b = " << (a+b) << endl;
-    cout << "a - b = " << (a-b) << endl;
-    cout << "a * b = " << (a*b) << endl;
-    cout << "a % b = " << (a%b) << endl;
-
-    //Operator logika
-    cout << "a > b = " << (a>b) << endl;
-    cout << "a < b = " << (a<b) << endl;
-    cout << "a >= b = " << (a>=b) << endl;
-    cout << "a <= b = " << (a<=b) << endl;
-    cout << "a == b = " << (a==b) << endl;
-    cout << "a != b = " << (a!=b) << endl;
-    return 0;
-}
-```
-......................
-
-### 2. Percabangan
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main () {
-    int angka1 = 10;
-    int angka2 = 20;
-
-    if (angka1 > angka2) {
-        cout << "angka-1 lebih besar dari angka-2" << endl;
-    } else if (angka1 < angka2) {
-        cout << "angka-1 lebih kecil dari angka-2" << endl;
-    } else {
-        cout << "angka-1 sama dengan angka-2" << endl;
-    }
-
-    return 0;
-}
-```
-....................
-
-### 3. Struct
-
-```C++
-#include <iostream>
-using namespace std;
-
-struct Mahasiswa {
-    string nama;
-    int umur;
+struct mahasiswa {
+    char nim[10];
+    int nilai1, nilai2;
 };
 
-int main() {
-    int jumlah;
-    cout << "Masukan jumlah mahasiswa: ";
-    cin >> jumlah;
-    Mahasiswa mhs[jumlah];
-    
-    // input data menggunakan loop
-    for (int i = 0; i < jumlah; i++) {
-        cout << "\nMahasiswa ke-" << i + 1 << endl;
-        cout << "Nama: ";
-        cin >> mhs[i].nama;
-        cout << "Umur: ";
-        cin >> mhs[i].umur;
-    }
+void inputMhs(mahasiswa &m);
+float rata2(mahasiswa m);
 
-    // tampilkan data
-    cout << "\n=== Data Mahasiswa ===\n";
-    for (int i = 0; i < jumlah; i++) {
-        cout << "Mahasiswa ke-" << i + 1
-             << " | Nama: " << mhs[i].nama
-             << " | Umur: " << mhs[i].umur << endl;
-    }
+#endif
+```
+Kode diatas digunakan hanya untuk mendeklarasikan nama fungsi, parameter, dan tipe return-nya.
 
-    return 0;
+### 2. Fungsi dengan definisi lengkap
+
+```C++
+#include <iostream>
+using namespace std;
+#include "mahasiswa.h"
+
+void inputMhs(mahasiswa &m){
+    cout << "input nama = ";
+    cin >> (m).nim;
+    cout << "input nilai = ";
+    cin >> (m).nilai1;
+    cout << "input nilai2 = ";
+    cin >> (m).nilai2;
+}
+
+float rata2(mahasiswa m){
+    return (m.nilai1 +m.nilai2) / 2.0;
 }
 ```
-................
+Kode ini digunakan untuk menerima input data mahasiswa berupa NIM dan dua nilai, kemudian menghitung rata-rata dari nilai tersebut.
+
+### 3. Fungsi utama
+
+```C++
+#include <iostream>
+#include "mahasiswa.h"
+using namespace std;
+
+int main(){
+    mahasiswa mhs;
+    inputMhs(mhs);
+    cout << "rata-rata = " << rata2(mhs);
+    return 0;
+}
+```
+Kode di atas merupakan lanjutan dari nomor satu dan dua yang digunakan untuk menerima input data seorang mahasiswa, kemudian menghitung dan menampilkan rata-rata nilainya melalui pemanggilan fungsi inputMhs dan rata2.
+
 
 ## Unguided 
 
@@ -208,40 +170,60 @@ int main() {
 
 using namespace std;
 
-int main() {
-    int n;
-    cout << "Masukkan angka: ";
-    cin >> n;
-
-    for (int baris = 0; baris <= n; baris++) {
-        for (int i = 0; i < baris * 2; i++) {
-            cout << " ";
+void tampil(int arr[3][3]) {
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            cout << arr[i][j] << " ";
         }
-        
-        for (int i = n - baris; i > 0; i--) {
-            cout << i << " ";
-        }
-        
-        cout << "* ";
-        
-        for (int i = 1; i <= n - baris; i++) {
-            cout << i << " ";
-        }
-        
         cout << endl;
     }
-    
+}
+
+void tukarArray(int a[3][3], int b[3][3], int i, int j) {
+    int temp = a[i][j];
+    a[i][j] = b[i][j];
+    b[i][j] = temp;
+}
+
+void tukarPointer(int *p, int *q) {
+    int temp = *p;
+    *p = *q;
+    *q = temp;
+}
+
+int main() {
+    int A[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    int B[3][3] = {{9,8,7},{6,5,4},{3,2,1}};
+
+    int x = 10, y = 20;
+    int *px = &x, *py = &y;
+
+    cout << "Array A:\n"; tampil(A);
+    cout << "\nArray B:\n"; tampil(B);
+
+    tukarArray(A, B, 0, 0);
+
+    cout << "\nSetelah ditukar:\n";
+    cout << "Array A:\n"; tampil(A);
+    cout << "\nArray B:\n"; tampil(B);
+
+    cout << "\nSebelum tukar pointer: x=" << x << ", y=" << y << endl;
+    tukarPointer(px, py);
+    cout << "Setelah tukar pointer: x=" << x << ", y=" << y << endl;
+
     return 0;
 }
 ```
 #### Output:
-<img width="1682" height="167" alt="Image" src="https://github.com/user-attachments/assets/63747614-8ee9-4130-ac96-40f6b3e9912f" />
-Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan seperti segitiga terbalik.
+<img width="590" height="652" alt="Image" src="https://github.com/user-attachments/assets/2c5d452b-696f-4a75-9bf0-f29644b57e1b" />
+
+Kode diatas digunakan untuk cara kerja array dua dimensi serta penggunaan fungsi dan pointer dalam bahasa C++. Pertama menampilkan isi array, kedua menunjukkan bagaimana dua buah array dapat saling menukar nilai pada posisi indeks tertentu, ketiga dimana variabel x dan y ditukar nilainya bukan secara langsung, tetapi dengan alamat memori.
 
 #### Full code Screenshot:
 <img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc49786a-daaa-4f1e-90f5-bebb2f1fd9b2" />
 
 ## Kesimpulan
-...........
+Menggunakan ADT memberikan banyak manfaat, terutama dalam hal keteraturan struktur program dan kemudahan pemeliharaan. Berdasarkan Modul yang diberikan pada praktikum ke 4, konsep ADT tidak hanya mengajarkan cara membuat struktur data, tetapi juga membentuk kebiasaan menulis program yang rapi dan terorganisir.
+
 ## Referensi
 [1] ..........
