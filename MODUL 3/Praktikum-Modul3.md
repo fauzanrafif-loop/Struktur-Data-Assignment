@@ -128,36 +128,56 @@ Kode diatas digunakan untuk memasukkan data beberapa mahasiswa, lalu menghitung 
 <img width="1470" height="943" alt="Image" src="https://github.com/user-attachments/assets/d0f2c7aa-22f4-4672-8322-9e3ee953af68" />
 
 ```C++
+#ifndef PELAJARAN_H
+#define PELAJARAN_H
+
+#include <string>
 #include <iostream>
 
 using namespace std;
 
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
+
+pelajaran create_pelajaran(string namapel, string kodepel);
+
+void tampil_pelajaran(pelajaran pel);
+
+#endif
+
+#include "pelajaran.h"
+
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran pel;
+    pel.namaMapel = namapel;
+    pel.kodeMapel = kodepel;
+    return pel;
+}
+
+void tampil_pelajaran(pelajaran pel) {
+    cout << "Nama Mata Pelajaran : " << pel.namaMapel << endl;
+    cout << "Kode Mata Pelajaran : " << pel.kodeMapel << endl;
+}
+
+#include "pelajaran.h"
+
 int main() {
-    string dasar[] = {"nol", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
-    int angka;
-    cout << "Masukkan angka: ";
-    cin >> angka;
-    
-    if (angka == 0) cout << dasar[0];
-    else if (angka == 10) cout << "sepuluh";
-    else if (angka == 11) cout << "sebelas"; 
-    else if (angka < 10) cout << dasar[angka];
-    else if (angka < 20) cout << dasar[angka-10] << " belas";
-    else if (angka == 100) cout << "seratus";
-    else if (angka < 100) {
-        cout << dasar[angka/10] << " puluh";
-        if (angka % 10 > 0) cout << " " << dasar[angka % 10];
-    }
-    else cout << "Tidak ada";
-    
+    pelajaran matematika = create_pelajaran("Bahasa Sunda", "SDA01");
+    pelajaran fisika = create_pelajaran("Bahasa Jawa", "JWA02");
+
+    tampil_pelajaran(matematika);
     cout << endl;
+    tampil_pelajaran(fisika);
+
     return 0;
 }
 ```
 #### Output:
-<img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/46146db9-ae96-4968-837d-f540f9e8125a" />
+<img width="903" height="229" alt="Image" src="https://github.com/user-attachments/assets/acbdf6e5-e1c5-4b8b-8b03-4df9d4d1b343" />
 
-..............
+Kode di atas digunakan untuk membuat dan menampilkan data mata pelajaran menggunakan konsep ADT (Abstract Data Type) / Struct dalam C++.
 
 ### 3. Buatlah program dengan ketentuan : 
 - 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer 
