@@ -240,10 +240,10 @@ int main() {
 Kode diatas digunakan untuk cara kerja array dua dimensi serta penggunaan fungsi dan pointer dalam bahasa C++. Pertama menampilkan isi array, kedua menunjukkan bagaimana dua buah array dapat saling menukar nilai pada posisi indeks tertentu, ketiga dimana variabel x dan y ditukar nilainya bukan secara langsung, tetapi dengan alamat memori.
 
 #### Full code Screenshot:
-<img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc49786a-daaa-4f1e-90f5-bebb2f1fd9b2" />
+<img width="2560" height="1600" alt="Image" src="https://github.com/user-attachments/assets/8b9a9050-2fe0-4144-b598-7f652fb24d25" />
 
 ## Kesimpulan
 Menggunakan ADT memberikan banyak manfaat, terutama dalam hal keteraturan struktur program dan kemudahan pemeliharaan. Berdasarkan Modul yang diberikan pada praktikum ke 4, konsep ADT tidak hanya mengajarkan cara membuat struktur data, tetapi juga membentuk kebiasaan menulis program yang rapi dan terorganisir.
 
 ## Referensi
-[1] ..........
+[1] Sianipar, R. H. (2014). Pemrograman C++ Untuk Pemula (Vol. 1). Penerbit INFORMATIKA.
