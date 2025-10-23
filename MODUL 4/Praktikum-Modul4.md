@@ -186,7 +186,8 @@ Bagian ini menjalankan proses utama program, yaitu membuat list, menambahkan dat
 
 ## Unguided 
 
-### 1. <img width="479" height="983" alt="Image" src="https://github.com/user-attachments/assets/6c0b3bfc-c264-4337-a6fc-0dcf18a22f6c" />
+### 1. 
+<img width="479" height="983" alt="Image" src="https://github.com/user-attachments/assets/6c0b3bfc-c264-4337-a6fc-0dcf18a22f6c" />
 
 ```C++
 #include <iostream>
