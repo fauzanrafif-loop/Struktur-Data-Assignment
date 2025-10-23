@@ -289,43 +289,155 @@ Output yang diharapkan :
 <img width="861" height="157" alt="Image" src="https://github.com/user-attachments/assets/4be2fc03-2fa8-44f3-bfe3-77ec7d0ea334" />
 
 ```C++
+A. HeaderFile
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
 #include <iostream>
 
 using namespace std;
 
-int main() {
-    string dasar[] = {"nol", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
-    int angka;
-    cout << "Masukkan angka: ";
-    cin >> angka;
-    
-    if (angka == 0) cout << dasar[0];
-    else if (angka == 10) cout << "sepuluh";
-    else if (angka == 11) cout << "sebelas"; 
-    else if (angka < 10) cout << dasar[angka];
-    else if (angka < 20) cout << dasar[angka-10] << " belas";
-    else if (angka == 100) cout << "seratus";
-    else if (angka < 100) {
-        cout << dasar[angka/10] << " puluh";
-        if (angka % 10 > 0) cout << " " << dasar[angka % 10];
+struct Node {
+    int data;
+    Node* next;
+};
+
+struct List {
+    Node* first;
+};
+
+void createList(List &L);
+Node* newNode(int value);
+void insertFirst(List &L, Node* nodeBaru);
+void printList(List L);
+
+void deleteFirst(List &L);
+void deleteLast(List &L);
+void deleteAfter(List &L, int x);
+int nbList(List L);
+void deleteList(List &L);
+
+#endif
+
+B. SourceFile
+
+#include "SinglyList.h"
+
+void createList(List &L) {
+    L.first = NULL;
+}
+
+Node* newNode(int value) {
+    Node* nodeBaru = new Node;
+    nodeBaru->data = value;
+    nodeBaru->next = NULL;
+    return nodeBaru;
+}
+
+void insertFirst(List &L, Node* nodeBaru) {
+    nodeBaru->next = L.first;
+    L.first = nodeBaru;
+}
+
+void printList(List L) {
+    Node* bantu = L.first;
+    while (bantu != NULL) {
+        cout << bantu->data << " ";
+        bantu = bantu->next;
     }
-    else cout << "Tidak ada";
-    
     cout << endl;
+}
+
+void deleteFirst(List &L) {
+    if (L.first != NULL) {
+        Node* hapus = L.first;
+        L.first = L.first->next;
+        delete hapus;
+    }
+}
+
+void deleteLast(List &L) {
+    if (L.first != NULL) {
+        if (L.first->next == NULL) {
+            delete L.first;
+            L.first = NULL;
+        } else {
+            Node* bantu = L.first;
+            Node* prev = NULL;
+            while (bantu->next != NULL) {
+                prev = bantu;
+                bantu = bantu->next;
+            }
+            prev->next = NULL;
+            delete bantu;
+        }
+    }
+}
+
+void deleteAfter(List &L, int x) {
+    Node* bantu = L.first;
+    while (bantu != NULL && bantu->next != NULL) {
+        if (bantu->data == x) {
+            Node* hapus = bantu->next;
+            bantu->next = hapus->next;
+            delete hapus;
+            break;
+        }
+        bantu = bantu->next;
+    }
+}
+
+int nbList(List L) {
+    int count = 0;
+    Node* bantu = L.first;
+    while (bantu != NULL) {
+        count++;
+        bantu = bantu->next;
+    }
+    return count;
+}
+
+void deleteList(List &L) {
+    while (L.first != NULL) {
+        deleteFirst(L);
+    }
+}
+
+
+C. MainProgram
+
+#include "SinglyList.h"
+
+int main() {
+    List L;
+    createList(L);
+    insertFirst(L, newNode(2));
+    insertFirst(L, newNode(0));
+    insertFirst(L, newNode(8));
+    insertFirst(L, newNode(12));
+    insertFirst(L, newNode(9));
+    deleteFirst(L);     
+    deleteLast(L);        
+    deleteAfter(L, 12);   
+    printList(L);
+    cout << "Jumlah node : " << nbList(L) << endl;
+    deleteList(L);
+    cout << "- List Berhasil Terhapus -" << endl;
+    cout << "Jumlah node : " << nbList(L) << endl;
+
     return 0;
 }
 ```
 #### Output:
-<img width="1308" height="113" alt="Image" src="https://github.com/user-attachments/assets/46146db9-ae96-4968-837d-f540f9e8125a" />
+<img width="920" height="189" alt="Image" src="https://github.com/user-attachments/assets/bfbb8566-2604-49b7-af15-373df21aba23" />
 
-Kode di atas digunakan untuk mengubah angka menjadi tulisan dengan penggunaan percabangan.
-
-
+Kode di atas merupakan pengembangan dari ADT Single Linked sebelumnya, tapi ada tambahan beberapa fungsi untuk hapus data dan hitung jumlah node. Strukturnya masih pakai node dengan data dan pointer next. Bedanya, sekarang ada fungsi deleteFirst, deleteLast, deleteAfter, nbList, dan deleteList. Jadi selain bisa nambah data lewat insertAwal, insertAkhir, dan insertAfter, program ini juga bisa hapus dan bersihin list.
 
 #### Full code Screenshot:
-<img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc49786a-daaa-4f1e-90f5-bebb2f1fd9b2" />
+<img width="2560" height="1600" alt="Image" src="https://github.com/user-attachments/assets/a6f2d7f3-6979-406d-b14e-a91245865a05" />
 
 ## Kesimpulan
-Modul ini memberikan pengenalan bahasa pemrograman C++ yang lumayan lengkap, dari struktur dasar program C++ yang meliputi deklarasi library, fungsi, dan program utama seperti variabel dan konstanta. Untuk input atau output terdapat penggunaan cout, cin, dan getchar dengan penjelasan format output yang tepat dalam membantu saya memahami logika pemrograman. Selain itu dengan adanya latihan soal yang terdapat modul juga sangat membantu saya melatih logika pemrograman dan penyelesaian masalahnya.
+Modul ini menjelaskan bahwa penggunaan singly linked list memberikan efisiensi dalam pengelolaan data yang sering berubah ukurannya. Misalnya, ketika diperlukan penambahan atau penghapusan data secara berulang, singly linked list jauh lebih efisien dibanding array karena tidak perlu melakukan pergeseran elemen. Namun, terdapat juga kelemahan seperti sulitnya melakukan akses langsung ke elemen tertentu karena pencarian harus dilakukan secara berurutan mulai dari node pertama.
+
 ## Referensi
 [1] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1). Penerbit ANDI.
