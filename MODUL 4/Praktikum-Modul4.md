@@ -440,4 +440,4 @@ Kode di atas merupakan pengembangan dari ADT Single Linked sebelumnya, tapi ada 
 Modul ini menjelaskan bahwa penggunaan singly linked list memberikan efisiensi dalam pengelolaan data yang sering berubah ukurannya. Misalnya, ketika diperlukan penambahan atau penghapusan data secara berulang, singly linked list jauh lebih efisien dibanding array karena tidak perlu melakukan pergeseran elemen. Namun, terdapat juga kelemahan seperti sulitnya melakukan akses langsung ke elemen tertentu karena pencarian harus dilakukan secara berurutan mulai dari node pertama.
 
 ## Referensi
-[1] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1). Penerbit ANDI.
+[1] Parlante, N. (2001). Linked list basics. Stanford CS Education Library, 1, 25.
