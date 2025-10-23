@@ -186,30 +186,102 @@ Bagian ini menjalankan proses utama program, yaitu membuat list, menambahkan dat
 
 ## Unguided 
 
-### 1. <img width="479" height="983" alt="Image" src="https://github.com/user-attachments/assets/6c0b3bfc-c264-4337-a6fc-0dcf18a22f6c" />
+### 1. 
+<img width="479" height="983" alt="Image" src="https://github.com/user-attachments/assets/6c0b3bfc-c264-4337-a6fc-0dcf18a22f6c" />
 
 ```C++
+A. HeaderFile
+
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
 #include <iostream>
+
 using namespace std;
 
-int main() {
-    float a, b;
-    cout << "Masukkan Angka : ";
-    cin >> a;
-    cout << "Masukkan Angka Selanjutnya: ";
-    cin >> b;
+typedef int infotype;
 
-    cout << "Hasil Penjumlahan : " << a + b << endl;
-    cout << "Hasil Pengurangan : " << a - b << endl;
-    cout << "Hasil Perkalian : " << a * b << endl;
-    cout << "Hasil Pembagian : " << a / b << endl;
+struct ElmtList {
+    infotype info;
+    ElmtList *next;
+};
+
+struct List {
+    ElmtList *first;
+};
+
+void createList(List &L);
+ElmtList* alokasi(infotype x);
+void dealokasi(ElmtList* P);
+void insertFirst(List &L, ElmtList* P);
+void printInfo(List L);
+
+#endif
+
+B. SourceFile
+
+#include "SinglyList.h"
+
+void createList(List &L) {
+    L.first = NULL;
+}
+
+ElmtList* alokasi(infotype x) {
+    ElmtList *P = new ElmtList;
+    P->info = x;
+    P->next = NULL;
+    return P;
+}
+
+void dealokasi(ElmtList* P) {
+    delete P;
+}
+
+void insertFirst(List &L, ElmtList* P) {
+    P->next = L.first;
+    L.first = P;
+}
+
+void printInfo(List L) {
+    ElmtList *P = L.first;
+    while (P != NULL) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+C. MainProgram
+
+#include "SinglyList.h"
+
+int main() {
+    List L;
+    ElmtList *P1, *P2, *P3, *P4, *P5;
+
+    createList(L);
+
+    P1 = alokasi(2);
+    P2 = alokasi(0);
+    P3 = alokasi(8);
+    P4 = alokasi(12);
+    P5 = alokasi(9);
+
+    insertFirst(L, P1);
+    insertFirst(L, P2);
+    insertFirst(L, P3);
+    insertFirst(L, P4);
+    insertFirst(L, P5);
+
+    printInfo(L);
+
     return 0;
 }
+
 ```
 #### Output:
-<img width="1648" height="256" alt="Image" src="https://github.com/user-attachments/assets/5a705dd0-8bc2-46af-a58b-735c789a6e38" />
+<img width="925" height="111" alt="Image" src="https://github.com/user-attachments/assets/be6c70f8-b312-4039-9da5-575e915f8a8d" />
 
-Kode di atas digunakan untuk melakukan perhitungan seperti penjumlahan, pengurangan, perkalian, dan pembagian.
+Kode di atas digunakan untuk mengimplementasikan struktur data Singly Linked List (list berantai satu arah) dalam bahasa C++. Program ini bertujuan untuk menunjukkan bagaimana cara membuat list kosong, menambahkan elemen baru, dan menampilkan seluruh isi list menggunakan konsep pointer.
 
 ### 2. Dari soal Latihan pertama, lakukan penghapusan node 9 menggunakan deleteFirst(), node 2 menggunakan deleteLast(), dan node 8 menggunakan deleteAfter(). Kemudian tampilkan jumlah node yang tersimpan menggunakan nbList() dan lakukan penghapusan seluruh node menggunakan deleteList(). 
 Output yang diharapkan :
@@ -248,43 +320,7 @@ int main() {
 
 Kode di atas digunakan untuk mengubah angka menjadi tulisan dengan penggunaan percabangan.
 
-### 3. Buatlah program yang dapat menerima input dan output sebagai berikut:
-<img width="269" height="261" alt="Image" src="https://github.com/user-attachments/assets/86cd0bc5-9848-4d7d-beb0-962e352e700c" />
 
-```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    int n;
-    cout << "Masukkan angka: ";
-    cin >> n;
-
-    for (int baris = 0; baris <= n; baris++) {
-        for (int i = 0; i < baris * 2; i++) {
-            cout << " ";
-        }
-        
-        for (int i = n - baris; i > 0; i--) {
-            cout << i << " ";
-        }
-        
-        cout << "* ";
-        
-        for (int i = 1; i <= n - baris; i++) {
-            cout << i << " ";
-        }
-        
-        cout << endl;
-    }
-    
-    return 0;
-}
-```
-#### Output:
-<img width="1682" height="167" alt="Image" src="https://github.com/user-attachments/assets/63747614-8ee9-4130-ac96-40f6b3e9912f" />
-Kode di atas digunakan untuk membuat pola angka yang dimana jika kita masukan angka berapapun akan membentuk pola yang berurutan seperti segitiga terbalik.
 
 #### Full code Screenshot:
 <img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/dc49786a-daaa-4f1e-90f5-bebb2f1fd9b2" />
