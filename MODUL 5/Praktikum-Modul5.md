@@ -626,12 +626,15 @@ int main() {
 }
 ```
 Output 1.
+
 <img width="148" height="20" alt="Image" src="https://github.com/user-attachments/assets/090c4657-dc88-4869-a15d-b4d2cc184e9a" />
 
 Output 2.
+
 <img width="263" height="29" alt="Image" src="https://github.com/user-attachments/assets/5f2995eb-7000-4f2d-9a95-47b13e154b66" />
 
 Output 3.
+
 <img width="456" height="24" alt="Image" src="https://github.com/user-attachments/assets/3faab646-66f8-430b-8947-aa11ba38e270" />
 
 Program ini merupakan program lanjutan dari modul sebelumnya, dengan penambahan dua fungsi baru yaitu findElm() dan Info(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9. dan diminta menjalankan tiga perintah yaitu menampilkan seluruh elemen dalam list, mencari alamat node yang memiliki nilai 8 menggunakan fungsi findElm(), serta menghitung total nilai dari semua elemen list menggunakan fungsi Info()
@@ -645,4 +648,4 @@ Program ini merupakan program lanjutan dari modul sebelumnya, dengan penambahan 
 Searching pada singly linked list merupakan proses penting untuk menemukan data tertentu dengan cara menelusuri setiap node secara berurutan dari awal hingga akhir list.
 
 ## Referensi
-[1] ..................................
+[1] Leana, S. A., Ginting, M. A. P., Izdihar, M. B., Pratama, T. S. A., Manik, D. A. A., & Gunawan, I. (2025). PERBANDINGAN EFISIENSI LINEAR DAN BINARY SEARCH DALAM PENCARIAN NAMA SISWA PADA STRUKTUR DATA ARRAY. (JRSIKOM) Jurnal Riset Sistem Informasi dan Aplikasi Komputer, 1(2), 45-50.
