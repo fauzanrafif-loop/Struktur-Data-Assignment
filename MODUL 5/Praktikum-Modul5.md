@@ -637,7 +637,8 @@ Output 3.
 
 <img width="456" height="24" alt="Image" src="https://github.com/user-attachments/assets/3faab646-66f8-430b-8947-aa11ba38e270" />
 
-Program ini merupakan program lanjutan dari modul sebelumnya, dengan penambahan dua fungsi baru yaitu findElm() dan Info(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9. dan diminta menjalankan tiga perintah yaitu menampilkan seluruh elemen dalam list, mencari alamat node yang memiliki nilai 8 menggunakan fungsi findElm(), serta menghitung total nilai dari semua elemen list menggunakan fungsi Info()
+
+Program ini merupakan program lanjutan dari modul sebelumnya, dengan penambahan dua fungsi baru yaitu findElm() dan Info(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9. dan diminta menjalankan tiga perintah yaitu menampilkan seluruh elemen dalam list, mencari elemen yang memiliki info 8 menggunakan fungsi findElm(), serta menghitung total nilai dari semua elemen list menggunakan fungsi Info()
 
 #### Full code Screenshot:
 
