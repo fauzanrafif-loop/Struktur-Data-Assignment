@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-.........................................
+Searching merupakan salah satu operasi dasar dalam struktur data singly linked list, yang berfungsi untuk menemukan node tertentu dengan cara menelusuri setiap elemen dari awal hingga elemen yang dicari ditemukan. Proses ini sangat penting karena menjadi dasar bagi operasi lain seperti insert after, delete after, dan update. 
 
 ## Guided 
 
@@ -438,25 +438,29 @@ int main() {
 
 using namespace std;
 
-typedef int infotype;
-typedef struct elmlist *address;
-
-struct elmlist {
-    infotype info;
-    address next;
+struct node {
+    int data;
+    node *next;
 };
 
-struct List {
-    address first;
+struct list {
+    node *first;
 };
 
-void createList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &p);
-void insertFirst(List &L, address p);
-void printInfo(List L);
-address findElm(List L, infotype x);
-int sumInfo(List L);
+void createList(list &L);
+node* newNode(int x);
+void insertFirst(list &L, node *n);
+void insertLast(list &L, node *n);
+void insertAfter(node *prev, node *n);
+void show(list L);
+
+void deleteFirst(list &L);
+void deleteLast(list &L);
+void deleteAfter(node *prev);
+int nbList(list L);
+void deleteList(list &L);
+node* findElm(list L, int x);
+int Info(list L);
 
 #endif
 ```
@@ -464,54 +468,117 @@ int sumInfo(List L);
 
 ```C++
 
-#include "Singlylist.h"
+#include "singlylist.h"
+#include <iostream>
+using namespace std;
 
-void createList(List &L) {
+void createList(list &L){
     L.first = NULL;
 }
 
-address alokasi(infotype x) {
-    address p = new elmlist;
-    p->info = x;
-    p->next = NULL;
-    return p;
+node* newNode(int x){
+    node *n = new node;
+    n->data = x;
+    n->next = NULL;
+    return n;
 }
 
-void dealokasi(address &p) {
-    delete p;
-    p = NULL;
+void insertFirst(list &L, node *n){
+    if(L.first == NULL) L.first = n;
+    else {
+        n->next = L.first;
+        L.first = n;
+    }
 }
 
-void insertFirst(List &L, address p) {
-    p->next = L.first;
-    L.first = p;
+void insertLast(list &L, node *n){
+    if(L.first == NULL) L.first = n;
+    else {
+        node *p = L.first;
+        while(p->next != NULL) p = p->next;
+        p->next = n;
+    }
 }
 
-void printInfo(List L) {
-    address p = L.first;
-    while (p != NULL) {
-        cout << p->info << " ";
+void insertAfter(node *prev, node *n){
+    if(prev != NULL){
+        n->next = prev->next;
+        prev->next = n;
+    }
+}
+
+void show(list L){
+    node *p = L.first;
+    while(p != NULL){
+        cout << p->data << " ";
         p = p->next;
     }
     cout << endl;
 }
 
-address findElm(List L, infotype x) {
-    address p = L.first;
-    while (p != NULL) {
-        if (p->info == x) {
-            return p;
-        }
-        p = p->next;
+void deleteFirst(list &L){
+    if(L.first != NULL){
+        node *p = L.first;
+        L.first = p->next;
+        delete p;
     }
-    return NULL;
 }
 
-int sumInfo(List L) {
+void deleteLast(list &L){
+    if(L.first != NULL){
+        node *p = L.first;
+        node *q = NULL;
+        while(p->next != NULL){
+            q = p;
+            p = p->next;
+        }
+        if(q == NULL) L.first = NULL;
+        else q->next = NULL;
+        delete p;
+    }
+}
+
+void deleteAfter(node *prev){
+    if(prev != NULL && prev->next != NULL){
+        node *p = prev->next;
+        prev->next = p->next;
+        delete p;
+    }
+}
+
+int nbList(list L){
+    int n = 0;
+    node *p = L.first;
+    while(p != NULL){
+        n++;
+        p = p->next;
+    }
+    return n;
+}
+
+void deleteList(list &L){
+    node *p = L.first;
+    while(p != NULL){
+        node *tmp = p;
+        p = p->next;
+        delete tmp;
+    }
+    L.first = NULL;
+}
+
+node* findElm(list L, int x){
+    node *p = L.first;
+    while(p != NULL && p->data != x){
+        p = p->next;
+    }
+    return p;
+}
+
+int Info(list L){
     int total = 0;
-    address p = L.first;
-    while (p != NULL) {
-        total += p->info;
+    node *p = L.first;
+    while(p != NULL){
+        total += p->data;
         p = p->next;
     }
     return total;
@@ -522,39 +589,42 @@ int sumInfo(List L) {
 
 ```C++
 
-#include "Singlylist.h"
+#include <iostream>
+#include "singlylist.h"
+using namespace std;
 
 int main() {
-    List L;
-    address P1, P2, P3, P4, P5;
-    createList(L);
+    list L;
+    createList(L); 
 
-    P1 = alokasi(2);
+    node *P1 = newNode(2);
+    node *P2 = newNode(0);
+    node *P3 = newNode(8);
+    node *P4 = newNode(12);
+    node *P5 = newNode(9);
+
     insertFirst(L, P1);
-    P2 = alokasi(0);
     insertFirst(L, P2);
-    P3 = alokasi(8);
     insertFirst(L, P3);
-    P4 = alokasi(12);
     insertFirst(L, P4);
-    P5 = alokasi(9);
     insertFirst(L, P5);
-    printInfo(L);  
 
-    address cari = findElm(L, 8);
-    if (cari != NULL)
-        cout << cari->info << " Ditemukan dalam list" << endl;
+    cout << endl;
+    show(L);
+    cout << endl;
+    node *found = findElm(L, 8);
+    if (found != NULL)
+        cout << "8 ditemukan dalam list" << endl;
     else
-        cout << "Tidak ditemukan dalam list" << endl;
+        cout << "8 tidak ditemukan dalam list" << endl;
 
-    int total = sumInfo(L);
-    cout << "Total info dari kelima elemen adalah: " << total << endl;
+    cout << endl;
+    cout << "Total info dari kelima elemen adalah " << Info(L) << endl;
+    cout << endl;
 
     return 0;
 }
 ```
-........................
-
 Output 1.
 <img width="148" height="20" alt="Image" src="https://github.com/user-attachments/assets/090c4657-dc88-4869-a15d-b4d2cc184e9a" />
 
@@ -564,11 +634,15 @@ Output 2.
 Output 3.
 <img width="456" height="24" alt="Image" src="https://github.com/user-attachments/assets/3faab646-66f8-430b-8947-aa11ba38e270" />
 
+Program ini merupakan program lanjutan dari modul sebelumnya, dengan penambahan dua fungsi baru yaitu findElm() dan Info(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9. dan diminta menjalankan tiga perintah yaitu menampilkan seluruh elemen dalam list, mencari alamat node yang memiliki nilai 8 menggunakan fungsi findElm(), serta menghitung total nilai dari semua elemen list menggunakan fungsi Info()
+
 #### Full code Screenshot:
-...................................
+
+<img width="2560" height="1600" alt="Image" src="https://github.com/user-attachments/assets/ae653b18-8e2e-471d-846a-bd872b385abb" />
 
 ## Kesimpulan
-..........................................
+
+Searching pada singly linked list merupakan proses penting untuk menemukan data tertentu dengan cara menelusuri setiap node secara berurutan dari awal hingga akhir list.
 
 ## Referensi
-[1] ..................................
+[1] Leana, S. A., Ginting, M. A. P., Izdihar, M. B., Pratama, T. S. A., Manik, D. A. A., & Gunawan, I. (2025). PERBANDINGAN EFISIENSI LINEAR DAN BINARY SEARCH DALAM PENCARIAN NAMA SISWA PADA STRUKTUR DATA ARRAY. (JRSIKOM) Jurnal Riset Sistem Informasi dan Aplikasi Komputer, 1(2), 45-50.
