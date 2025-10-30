@@ -645,4 +645,4 @@ Program ini merupakan program lanjutan dari modul sebelumnya, dengan penambahan 
 Searching pada singly linked list merupakan proses penting untuk menemukan data tertentu dengan cara menelusuri setiap node secara berurutan dari awal hingga akhir list.
 
 ## Referensi
-[1] Leana, S. A., Ginting, M. A. P., Izdihar, M. B., Pratama, T. S. A., Manik, D. A. A., & Gunawan, I. (2025). PERBANDINGAN EFISIENSI LINEAR DAN BINARY SEARCH DALAM PENCARIAN NAMA SISWA PADA STRUKTUR DATA ARRAY. (JRSIKOM) Jurnal Riset Sistem Informasi dan Aplikasi Komputer, 1(2), 45-50.
+[1] ..................................
