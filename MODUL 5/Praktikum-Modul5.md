@@ -556,12 +556,15 @@ int main() {
 ........................
 
 Output 1.
+
 <img width="148" height="20" alt="Image" src="https://github.com/user-attachments/assets/090c4657-dc88-4869-a15d-b4d2cc184e9a" />
 
 Output 2.
+
 <img width="263" height="29" alt="Image" src="https://github.com/user-attachments/assets/5f2995eb-7000-4f2d-9a95-47b13e154b66" />
 
 Output 3.
+
 <img width="456" height="24" alt="Image" src="https://github.com/user-attachments/assets/3faab646-66f8-430b-8947-aa11ba38e270" />
 
 #### Full code Screenshot:
