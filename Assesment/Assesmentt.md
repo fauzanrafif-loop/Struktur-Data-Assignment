@@ -3,7 +3,7 @@
 
 ## Soal 1
 
-### 1. Header File
+### Header File
 
 ```C++
 #ifndef SLLINVENTORY_H
@@ -56,7 +56,7 @@ void MaxHargaAkhir(List L);
 #endif
 ```
 
-### 2. Source File
+### Source File
 
 ```C++
 #include "SLLInventory.h"
@@ -255,7 +255,7 @@ void MaxHargaAkhir(List L) {
 }
 ```
 
-### 3. Main Program
+### Main Program
 
 ```C++
 #include <iostream>
