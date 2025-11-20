@@ -305,7 +305,7 @@ int main() {
 ## Soal 2
 
 ## Header
-
+```C++
 #ifndef DLLPLAYLIST_H
 #define DLLPLAYLIST_H
 #include <string>
@@ -343,9 +343,9 @@ void viewList(List L);
 void searchByPopularityRange(List L, float a, float b);
 
 #endif
-
+```
 ## Source File
-
+```C++
 #include "DLLPlaylist.h"
 #include <iostream>
 using namespace std;
@@ -419,9 +419,9 @@ void searchByPopularityRange(List L, float a, float b){
     }
     if(!ada) cout<<"Tidak ada\n";
 }
-
+```
 ## Main Program
-
+```C++
 #include <iostream>
 #include "DLLPlaylist.h"
 using namespace std;
@@ -458,7 +458,7 @@ int main(){
 
     return 0;
 }
-
+```
 ## Output
 
 <img width="750" height="838" alt="Image" src="https://github.com/user-attachments/assets/434d74e7-7bf8-422e-b1c2-3181665c278a" />
@@ -467,7 +467,7 @@ int main(){
 ### Soal3
 
 ### Header File
-
+```C++
 #ifndef STACKMAHASISWA_H
     #define STACKMAHASISWA_H
     #include <string>
@@ -499,9 +499,9 @@ int main(){
     void maxNA(Stack S);
 
     #endif
-
+```
 ### Source File
-
+```C++
 #include "StackMahasiswa.h"
 #include <iostream>
 using namespace std;
@@ -560,9 +560,9 @@ void maxNA(Stack S){
         if(nilaiAkhir(S.data[i]) == mx)
             cout<<i+1<<". "<<S.data[i].Nama<<"\n";
 }
-
+```
 ### Main Program
-
+```C++
 #include <iostream>
 #include "StackMahasiswa.h"
 using namespace std;
@@ -594,7 +594,7 @@ int main(){
 
     return 0;
 }
-
+```
 ### Output
 
 <img width="604" height="779" alt="Image" src="https://github.com/user-attachments/assets/d1d67e75-d47d-484e-bb2a-799298105f9d" />
@@ -602,7 +602,7 @@ int main(){
 ### Soal4
 
 ### Header File
-
+```C++
 #ifndef QUEUEPENGIRIMAN_H
 #define QUEUEPENGIRIMAN_H
 #include <string>
@@ -631,9 +631,9 @@ void viewQueue(Queue Q);
 long long totalBiaya(Queue Q);
 
 #endif
-
+```
 ### Source File
-
+```C++
 #include "QueuePengiriman.h"
 #include <iostream>
 using namespace std;
@@ -677,9 +677,9 @@ long long totalBiaya(Queue Q){
         t += Q.data[i].Berat * 8250LL;
     return t;
 }
-
+```
 ### Main Program
-
+```C++
 #include <iostream>
 #include "QueuePengiriman.h"
 using namespace std;
@@ -701,7 +701,7 @@ int main(){
 
     cout<<"\nTotal Biaya: Rp "<<totalBiaya(Q)<<"\n";
 }
-
+```
 ### Output
 
 <img width="541" height="368" alt="Image" src="https://github.com/user-attachments/assets/f57e3046-d37c-4a66-b4a3-b1383759d62d" />
