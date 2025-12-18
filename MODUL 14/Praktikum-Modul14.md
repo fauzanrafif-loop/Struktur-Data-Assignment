@@ -356,7 +356,7 @@ int main(){
     return 0;
 }
 ```
-.......................
+ Program diatas digunakan untuk membuat graph dengan menambahkan node menggunakan fungsi insertnode dan menghubungkan dua node atau membuat edge dengan node yang sudah ditambahkan tadi menggunakan fungsi connectnode. Pada program ini, juga dapat menampilkan hasil dengan pencarian yang berbeda yaitu BFS dan DFS.
 
 ## Unguided 
 
